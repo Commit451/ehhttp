@@ -48,7 +48,9 @@ val completable = call.toCompletable()
 - Completable: `toCompletable()` which throws `HttpException` if HTTP error
 
 ## Acknowledgements
+
 `HttpException` and `CallObservable` modified from [Retrofit](https://github.com/square/retrofit). Thanks to Square for being awesome.
+
 License
 --------
 

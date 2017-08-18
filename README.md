@@ -21,6 +21,7 @@ dependencies {
 ```
 
 ## Usage
+You convert calls to the desired RxJava types:
 ```kotlin
 val client = OkHttpClient.Builder()
     .build()
@@ -32,7 +33,12 @@ val request = Request.Builder()
 val call = client.newCall(request)
 //observable
 val observable = call.toObservable()
-//
+//single
+val single = call.toSingle()
+//flowable
+val flowable = call.toFlowable()
+//completable
+val completable = call.toCompletable()
 ```
 
 ## Supported types

@@ -10,11 +10,10 @@ import okhttp3.Call
 import okhttp3.Response
 
 
-internal class CallObservable(private val originalCall: Call) : Observable<Response>() {
+internal class CallObservable(private val call: Call) : Observable<Response>() {
 
     override fun subscribeActual(observer: Observer<in Response>) {
         // Since Call is a one-shot type, clone it for each new observer.
-        val call = originalCall.clone()
         observer.onSubscribe(CallDisposable(call))
 
         var terminated = false

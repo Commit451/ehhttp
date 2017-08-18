@@ -47,6 +47,8 @@ val completable = call.toCompletable()
 - Flowable: `toFlowable()` with `BackpressureStrategy.LATEST`
 - Completable: `toCompletable()` which throws `HttpException` if HTTP error
 
+## Acknowledgements
+`HttpException` and `CallObservable` modified from [Retrofit](https://github.com/square/retrofit). Thanks to Square for being awesome.
 License
 --------
 

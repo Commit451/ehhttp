@@ -1,3 +1,4 @@
+@file:JvmName("EhHttp")
 package com.commit451.ehhttp
 
 import io.reactivex.*

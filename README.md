@@ -40,6 +40,10 @@ val flowable = call.toFlowable()
 //completable
 val completable = call.toCompletable()
 ```
+If you need to, you can also call from Java:
+```java
+Single<Response> single = EhHttp.toSingle(call);
+```
 
 ## Supported types
 - Observable: `toObservable()`

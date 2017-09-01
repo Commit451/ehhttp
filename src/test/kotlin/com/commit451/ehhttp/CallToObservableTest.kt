@@ -7,10 +7,10 @@ import okhttp3.mockwebserver.MockWebServer
 import org.junit.Assert
 import org.junit.Test
 
-class CallToSingleTest {
+class CallToObservableTest {
 
     @Test
-    fun callToSingle() {
+    fun callToObservable() {
 
         val server = MockWebServer()
         server.enqueue(MockResponse().setResponseCode(200))
@@ -23,8 +23,8 @@ class CallToSingleTest {
                 .url(server.url(""))
                 .build()
 
-        val response = client.newCall(request).toSingle()
-                .blockingGet()
+        val response = client.newCall(request).toObservable()
+                .blockingFirst()
 
         server.shutdown()
 

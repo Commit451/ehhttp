@@ -27,8 +27,8 @@ val client = OkHttpClient.Builder()
     .build()
 
 val request = Request.Builder()
-        .url("http://www.example.com")
-        .build()
+    .url("http://www.example.com")
+    .build()
 
 val call = client.newCall(request)
 //observable

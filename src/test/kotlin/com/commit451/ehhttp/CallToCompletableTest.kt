@@ -23,12 +23,10 @@ class CallToCompletableTest {
                 .url(server.url(""))
                 .build()
 
-        val throwable = client.newCall(request).toCompletable()
-                .blockingGet()
+        client.newCall(request).toCompletable()
+                .blockingAwait()
 
         server.shutdown()
-
-        Assert.assertNull(throwable)
     }
 
     @Test
@@ -45,8 +43,13 @@ class CallToCompletableTest {
                 .url(server.url(""))
                 .build()
 
-        val throwable = client.newCall(request).toCompletable()
-                .blockingGet()
+        var throwable: Throwable? = null
+        try {
+            client.newCall(request).toCompletable()
+                    .blockingAwait()
+        } catch (t : Throwable) {
+            throwable = t
+        }
 
         server.shutdown()
 

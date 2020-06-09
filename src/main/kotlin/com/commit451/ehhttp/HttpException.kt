@@ -13,6 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+@file:Suppress("unused")
+
 package com.commit451.ehhttp
 
 import okhttp3.Response
@@ -24,7 +26,7 @@ class HttpException(@Transient private val response: Response) : RuntimeExceptio
     companion object {
         private fun getMessage(response: Response): String {
             checkNotNull(response, "response == null")
-            return "HTTP " + response.code() + " " + response.message()
+            return "HTTP " + response.code + " " + response.message
         }
 
         private fun <T> checkNotNull(`object`: T?, message: String): T {
@@ -35,8 +37,8 @@ class HttpException(@Transient private val response: Response) : RuntimeExceptio
         }
     }
 
-    private val code: Int = response.code()
-    private val responseMessage: String = response.message()
+    private val code: Int = response.code
+    private val responseMessage: String = response.message
 
     /** HTTP status code.  */
     fun code(): Int {

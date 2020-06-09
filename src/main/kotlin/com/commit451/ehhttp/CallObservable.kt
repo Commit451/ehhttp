@@ -1,11 +1,11 @@
 package com.commit451.ehhttp
 
-import io.reactivex.Observable
-import io.reactivex.Observer
-import io.reactivex.disposables.Disposable
-import io.reactivex.exceptions.CompositeException
-import io.reactivex.exceptions.Exceptions
-import io.reactivex.plugins.RxJavaPlugins
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.core.Observer
+import io.reactivex.rxjava3.disposables.Disposable
+import io.reactivex.rxjava3.exceptions.CompositeException
+import io.reactivex.rxjava3.exceptions.Exceptions
+import io.reactivex.rxjava3.plugins.RxJavaPlugins
 import okhttp3.Call
 import okhttp3.Response
 
@@ -20,10 +20,10 @@ internal class CallObservable(private val originalCall: Call) : Observable<Respo
         var terminated = false
         try {
             val response = call.execute()
-            if (!call.isCanceled) {
+            if (!call.isCanceled()) {
                 observer.onNext(response)
             }
-            if (!call.isCanceled) {
+            if (!call.isCanceled()) {
                 terminated = true
                 observer.onComplete()
             }
@@ -31,7 +31,7 @@ internal class CallObservable(private val originalCall: Call) : Observable<Respo
             Exceptions.throwIfFatal(t)
             if (terminated) {
                 RxJavaPlugins.onError(t)
-            } else if (!call.isCanceled) {
+            } else if (!call.isCanceled()) {
                 try {
                     observer.onError(t)
                 } catch (inner: Throwable) {
@@ -50,7 +50,7 @@ internal class CallObservable(private val originalCall: Call) : Observable<Respo
         }
 
         override fun isDisposed(): Boolean {
-            return call.isCanceled
+            return call.isCanceled()
         }
     }
 }

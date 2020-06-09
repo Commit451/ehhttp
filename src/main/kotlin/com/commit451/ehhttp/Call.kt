@@ -1,7 +1,7 @@
 @file:JvmName("EhHttp")
 package com.commit451.ehhttp
 
-import io.reactivex.*
+import io.reactivex.rxjava3.core.*
 import okhttp3.Call
 import okhttp3.Response
 

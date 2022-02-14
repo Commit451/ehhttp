@@ -1,7 +1,7 @@
 # ehHttp
 OkHttp, eh? Converts OkHttp `Call`s to RxJava types
 
-[![Build Status](https://travis-ci.org/Commit451/ehhttp.svg?branch=master)](https://travis-ci.org/Commit451/ehhttp) [![](https://jitpack.io/v/Commit451/ehhttp.svg)](https://jitpack.io/#Commit451/ehhttp)
+[![](https://jitpack.io/v/Commit451/ehhttp.svg)](https://jitpack.io/#Commit451/ehhttp)
 
 ## Gradle Dependency
 Add the jitpack url to the project:

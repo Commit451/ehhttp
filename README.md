@@ -16,7 +16,7 @@ allprojects {
 then, in your app `build.gradle`
 ```groovy
 dependencies {
-    compile "com.github.Commit451:ehhttp:latest.version.here"
+    implementation "com.github.Commit451:ehhttp:latest.version.here"
 }
 ```
 

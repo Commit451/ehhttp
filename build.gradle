@@ -26,6 +26,14 @@ repositories {
     mavenCentral()
 }
 
+allprojects {
+    plugins.withId("com.vanniktech.maven.publish") {
+        mavenPublish {
+            sonatypeHost = "S01"
+        }
+    }
+}
+
 ext {
     okHttpVersion = "4.9.3"
 }

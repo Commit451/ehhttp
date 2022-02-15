@@ -31,13 +31,13 @@ val request = Request.Builder()
     .build()
 
 val call = client.newCall(request)
-//observable
+// Observable
 val observable = call.toObservable()
-//single
+// Single
 val single = call.toSingle()
-//flowable
+// Flowable
 val flowable = call.toFlowable()
-//completable
+// Completable
 val completable = call.toCompletable()
 ```
 If you need to, you can also call from Java:
@@ -58,7 +58,7 @@ Single<Response> single = EhHttp.toSingle(call);
 License
 --------
 
-    Copyright 2017 Commit 451
+    Copyright 2022 Commit 451
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

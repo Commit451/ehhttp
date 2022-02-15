@@ -15,6 +15,7 @@ plugins {
 apply plugin: "java-library"
 apply plugin: "kotlin"
 apply plugin: "com.vanniktech.maven.publish"
+apply from: "publish.gradle"
 
 java {
     toolchain {
@@ -24,14 +25,6 @@ java {
 
 repositories {
     mavenCentral()
-}
-
-allprojects {
-    plugins.withId("com.vanniktech.maven.publish") {
-        mavenPublish {
-            sonatypeHost = "S01"
-        }
-    }
 }
 
 ext {

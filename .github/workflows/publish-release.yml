@@ -5,6 +5,9 @@ on:
     tags:
       - '*'
 
+env:
+  RELEASE_SIGNING_ENABLED: true
+
 jobs:
   publish:
 

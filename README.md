@@ -1,22 +1,12 @@
 # ehHttp
 OkHttp, eh? Converts OkHttp `Call`s to RxJava types
 
-[![](https://jitpack.io/v/Commit451/ehhttp.svg)](https://jitpack.io/#Commit451/ehhttp)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.commit451/ehhttp/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.commit451/ehhttp)
 
-## Gradle Dependency
-Add the jitpack url to the project:
-```groovy
-allprojects {
-    repositories {
-        ...
-        maven { url "https://jitpack.io" }
-    }
-}
-```
-then, in your app `build.gradle`
+## Gradle
 ```groovy
 dependencies {
-    implementation "com.github.Commit451:ehhttp:latest.version.here"
+    implementation("com.commit451:ehhttp:latest.release.here")
 }
 ```
 
